@@ -2,6 +2,21 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
+  // === Noindex rules ===
+  const { pathname: _pathname } = request.nextUrl;
+  const pageMatch = _pathname.match(/\/page\/(\d+)/);
+  if (pageMatch && parseInt(pageMatch[1], 10) > 1) {
+    const r = NextResponse.next();
+    r.headers.set("X-Robots-Tag", "noindex, follow");
+    return r;
+  }
+  if (_pathname === "/author" || _pathname === "/authors" || _pathname.startsWith("/author/") || _pathname.startsWith("/authors/")) {
+    const r = NextResponse.next();
+    r.headers.set("X-Robots-Tag", "noindex, follow");
+    return r;
+  }
+  // === End noindex rules ===
+
   const url = request.nextUrl.clone();
   const host = request.headers.get("host") || "";
 

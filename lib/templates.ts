@@ -12,7 +12,7 @@ const SHARED_CSS = `
   --c-blue:#2563eb;--c-purple:#9333ea;--c-slate:#64748b;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Plus Jakarta Sans',-apple-system,sans-serif;color:var(--text);background:var(--bg);line-height:1.7;padding-top:64px;}
+body{font-family:'Plus Jakarta Sans',-apple-system,sans-serif;color:var(--text);background:var(--bg);line-height:1.7;padding-top:64px;overflow-x:hidden;}
 a{color:var(--indigo);text-decoration:none;transition:color .2s;}a:hover{color:var(--indigo-dark);}
 
 /* === HEADER === */
@@ -79,7 +79,7 @@ footer .f-bottom{max-width:1200px;margin:32px auto 0;padding:16px 24px 0;border-
 .a-card{display:block;text-decoration:none;color:inherit;background:var(--bg-card);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);transition:all 0.25s;}
 .a-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover);border-color:var(--border-accent);}
 .a-card img{width:100%;height:200px;object-fit:cover;display:block;}
-.a-card-body{padding:18px 20px;}
+.a-card-body{padding:18px 20px;overflow-x:hidden;}
 .a-card-body h2{font-family:'Bricolage Grotesque',sans-serif;font-size:1.05rem;line-height:1.4;margin-bottom:8px;color:var(--navy);}
 .a-card-body p{font-size:0.85rem;color:var(--text-mid);line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:8px;}
 .a-card-meta{font-size:0.78rem;color:var(--text-light);font-family:var(--mono);}
